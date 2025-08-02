@@ -1,26 +1,37 @@
 @import "tailwindcss";
 
+/* === DARK MODE (fallback or default if dark mode not supported) === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d1117;             /* dark background, deep navy */
+  --foreground: #ffffff;             /* white foreground text */
+  --primary: #00ffc2;                /* neon cyan/teal accent */
+  --primary-hover: #007f6e;          /* slightly darker teal */
+  --border-color: #1f2937;           /* dark border */
+  --muted: #94a3b8;                  /* subtle text, like gray-400 */
+}
+
+/* === LIGHT MODE (actually the default style here) === */
+.light {
+    --background: #f9fafb;           /* fallback to light bg */
+    --foreground: #171717;           /* rich black */
+    --primary: #0d9488;              /* fallback teal */
+    --primary-hover: #0f766df8;
+    --border-color: #e5e7eb;         /* light gray borders */
+    --muted: #6b7280;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --font-sans: var(--font-geist-sans, system-ui, sans-serif);
+  --font-mono: var(--font-geist-mono, monospace);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root, body {
+  transition:
+    background-color 0.4s ease-in-out,
+    color 0.4s ease-in-out;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+
