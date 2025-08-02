@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* === DARK MODE (fallback or default if dark mode not supported) === */
-:root {
+:root.dark {
   --background: #0d1117;             /* dark background, deep navy */
   --foreground: #ffffff;             /* white foreground text */
   --primary: #00ffc2;                /* neon cyan/teal accent */
@@ -11,7 +11,7 @@
 }
 
 /* === LIGHT MODE (actually the default style here) === */
-.light {
+:root.light {
     --background: #f9fafb;           /* fallback to light bg */
     --foreground: #171717;           /* rich black */
     --primary: #0d9488;              /* fallback teal */
