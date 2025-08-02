@@ -1,3 +1,4 @@
+import { LINKS } from '@/constants/links'
 import React from 'react'
 
 export default function Footer() {
@@ -5,7 +6,7 @@ export default function Footer() {
     <footer className="text-center py-6 text-sm text-muted">
       <div className="flex justify-center gap-4 mb-2">
         <a
-          href="https://github.com/Batz005"
+          href={LINKS.external.resume}
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-primary transition-colors"
@@ -13,7 +14,7 @@ export default function Footer() {
           GitHub
         </a>
         <a
-          href="https://linkedin.com/in/your-actual-profile"
+          href={LINKS.external.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-primary transition-colors"
@@ -21,7 +22,7 @@ export default function Footer() {
           LinkedIn
         </a>
         <a
-          href="mailto:you@example.com"
+          href={LINKS.external.email}
           className="hover:text-primary transition-colors"
         >
           Email
