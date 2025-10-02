@@ -23,13 +23,13 @@
     --muted: #6b7280;
     --primary-soft: rgba(13, 148, 136, 0.14);
     --primary-soft-strong: rgba(13, 148, 136, 0.3);
-    --primary-emphasis: #065f46;     /* deep teal for legible accents */
+    --primary-emphasis: #047857;     /* deep teal for legible accents */
 }
 
 :root {
   --primary-soft: rgba(13, 148, 136, 0.14);
   --primary-soft-strong: rgba(13, 148, 136, 0.3);
-  --primary-emphasis: #065f46;
+  --primary-emphasis: #047857;
 }
 
 @theme inline {

@@ -1,5 +1,9 @@
 // data/experience.ts
+import { getAwardsForExperience } from './awards'
+import { getProjectsForExperience } from './projects'
+
 export type Experience = {
+  id: string
   company: string
   logoUrl?: string
   role: string
@@ -14,6 +18,7 @@ export type Experience = {
   awards?: { title: string; date?: string; blurb?: string }[]
   certifications?: { title: string; date?: string; blurb?: string }[]
   links?: { label: string; href: string }[]
+  spotlightProjects?: { id: string; name: string; summary?: string; link?: string }[]
   caseStudy?: {
     context: string
     constraints?: string[]
@@ -26,6 +31,7 @@ export type Experience = {
 
 export const EXPERIENCES: Experience[] = [
   {
+    id: 'samsung-camera-iq',
     company: "Samsung Research Institute Noida (SRIN)",
     logoUrl: "/assets/samsungLogo.avif",
     role: "Software Engineer – Camera System & Camera IQ Team",
@@ -77,23 +83,11 @@ export const EXPERIENCES: Experience[] = [
       "Linux",
       "Design Patterns"
     ],
-    awards: [
-      {
-        title: "Employee of the Quarter – Incredibles Award",
-        blurb: "Awarded for developing and delivering the shared memory communication system.",
-        date: "2025-Q2",
-      },
-      {
-        title: "Spot Award",
-        blurb: "Recognized for cross-team innovation and impactful contributions.",
-        date: "2023-Q4",
-      },
-      {
-        title: "Spot Award",
-        blurb: "Recognized for team collaboration and platform stability improvements.",
-        date: "2024-Aug–Sep",
-      },
-    ],
+    awards: getAwardsForExperience('samsung-camera-iq').map(({ title, date, blurb }) => ({
+      title,
+      date,
+      blurb,
+    })),
     certifications: [
       {
         title: "SWC – Professional Certification",
@@ -101,5 +95,11 @@ export const EXPERIENCES: Experience[] = [
         date: "2024",
       },
     ],
+    spotlightProjects: getProjectsForExperience('samsung-camera-iq').map((project) => ({
+      id: project.id,
+      name: project.name,
+      summary: project.summary,
+      link: project.links?.[0]?.href,
+    })),
   },
 ]
