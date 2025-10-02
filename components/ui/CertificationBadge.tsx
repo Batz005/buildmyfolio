@@ -31,6 +31,7 @@ export default function CertificationBadge({ certification }: CertificationBadge
       transition={{ duration: 0.45, ease: 'easeOut' }}
       viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
       whileHover={{ y: -2 }}
+      clickable
     >
         <MediaFrame
           src={imageUrl}

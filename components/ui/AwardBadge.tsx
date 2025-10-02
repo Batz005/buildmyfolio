@@ -25,6 +25,7 @@ export default function AwardBadge({ award }: AwardBadgeProps) {
       as={motion.div}
       className="flex h-full items-center gap-3 px-4 py-3 text-sm"
       wrapperClassName="group"
+      clickable
       showHalo={false}
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
