@@ -79,6 +79,7 @@ export type Project = {
   experience: ProjectExperience
   media?: ProjectMedia[]
   links?: ProjectLink[]
+  confidential?: boolean
 }
 
 export const PROJECTS: Project[] = [
@@ -120,21 +121,9 @@ export const PROJECTS: Project[] = [
     },
     experience: {
       kind: 'gallery',
-      media: [
-        {
-          kind: 'image',
-          src: '/projects/shared-memory/architecture.png',
-          alt: 'Architecture diagram of the shared memory communication system',
-        },
-      ],
+      media: [],
     },
-    links: [
-      {
-        label: 'Internal Design Spec',
-        href: '#',
-        kind: 'doc',
-      },
-    ],
+    confidential: true,
   },
   {
     id: 'buildmyfolio',
