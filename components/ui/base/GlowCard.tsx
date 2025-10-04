@@ -21,7 +21,7 @@ const clickableClasses =
   'cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--primary)]';
 
 export function GlowCard<T extends React.ElementType = 'div'>(props: GlowCardProps<T>) {
-  const { as, children, className, wrapperClassName, haloClassName, showHalo = true,clickable, ...rest } = props
+  const { as, children, className, wrapperClassName, haloClassName, showHalo = true, clickable, ...rest } = props
 
   const Component = (as || 'div') as React.ElementType
 

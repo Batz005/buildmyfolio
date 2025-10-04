@@ -8,25 +8,32 @@ import { LINKS } from '@/constants/links'
 
 export default function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 bg-[var(--background)] transition-colors duration-300 px-4 py-4 flex items-center justify-between">
-      
+    <nav className="relative sticky top-0 z-50 flex items-center justify-between px-4 py-4 transition-colors duration-300 bg-[var(--background)] md:px-8">
       {/* Left: Logo */}
- 
-        <Link href={LINKS.internal.home}><LogoIcon className="w-12 h-12 text-[var(--primary)] hover:text-[var(--primary-hover)] transition-colors" /></Link>
-   
+      <Link href={LINKS.internal.home} className="shrink-0">
+        <LogoIcon className="h-12 w-12 text-[var(--primary)] transition-colors hover:text-[var(--primary-hover)]" />
+      </Link>
 
       {/* Center: Nav Links */}
-      <div className="hidden md:flex gap-6 text-sm text-[color:var(--foreground)]" >
-        <Link className="hover:text-[var(--primary-hover)]" href={LINKS.internal.home} >Home</Link>
-        <Link className="hover:text-[var(--primary-hover)]" href={LINKS.internal.projects}>Projects</Link>
-        <Link className="hover:text-[var(--primary-hover)]" href={LINKS.internal.experience}>Experience</Link>
+      <div className="absolute left-1/2 top-1/2 hidden h-12 -translate-x-1/2 -translate-y-1/2 md:flex">
+        <div className="flex h-full items-center gap-6 text-sm text-[color:var(--foreground)]">
+          <Link className="hover:text-[var(--primary-hover)]" href={LINKS.internal.home}>
+            Home
+          </Link>
+          <Link className="hover:text-[var(--primary-hover)]" href={LINKS.internal.projects}>
+            Projects
+          </Link>
+          <Link className="hover:text-[var(--primary-hover)]" href={LINKS.internal.experience}>
+            Experience
+          </Link>
+        </div>
       </div>
 
       {/* Right: Actions */}
-      <div className="flex gap-3 items-center text-sm">
+      <div className="flex items-center gap-3 text-sm">
         <Link
           href={LINKS.internal.contact}
-          className="px-4 py-2 rounded-full border border-primary text-[color:var(--foreground)] hover:bg-[var(--primary-hover)] hover:text-[var(--background)]"
+          className="px-4 py-2 rounded-full border border-[var(--primary)] text-[color:var(--foreground)] transition-colors hover:bg-[var(--primary-hover)] hover:text-[var(--background)]"
         >
           Let’s Talk
         </Link>
@@ -35,7 +42,7 @@ export default function Navbar() {
           href={LINKS.external.resume}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-[var(--primary-hover)] text-[color:var(--foreground)] "
+          className="underline text-[color:var(--foreground)] transition-colors hover:text-[var(--primary-hover)]"
         >
           Resume
         </a>
@@ -45,5 +52,3 @@ export default function Navbar() {
     </nav>
   )
 }
-
-
